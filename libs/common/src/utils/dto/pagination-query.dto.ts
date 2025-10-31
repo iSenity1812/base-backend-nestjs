@@ -1,5 +1,5 @@
-import { Expose, Type } from 'class-transformer/types';
-import { IsNumber, IsOptional } from 'class-validator/types';
+import { Expose, Type } from 'class-transformer';
+import { IsNumber, IsOptional } from 'class-validator';
 
 import { ParseJson } from '@app/common/decorators';
 

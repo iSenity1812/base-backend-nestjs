@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { LoginMethod } from '../interfaces';
-import { IsEnum, IsNotEmpty, IsObject } from 'class-validator/types';
-import { Expose } from 'class-transformer/types';
+import { IsEnum, IsNotEmpty, IsObject } from 'class-validator';
+import { Expose } from 'class-transformer';
 
 export class LoginRequestDto {
   @ApiProperty({

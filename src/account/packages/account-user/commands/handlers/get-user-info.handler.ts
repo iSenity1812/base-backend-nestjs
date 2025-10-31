@@ -1,7 +1,7 @@
 import { CommandHandler, type ICommandHandler } from '@nestjs/cqrs';
 import { GetUserInfoCommand } from '../impl';
 import type { UserEntity } from '../../entities/user.entity';
-import type { AccountUserService } from '../../services/account-user.service';
+import { AccountUserService } from '../../services/account-user.service';
 
 @CommandHandler(GetUserInfoCommand)
 export class GetUserInfoHandler implements ICommandHandler<GetUserInfoCommand> {

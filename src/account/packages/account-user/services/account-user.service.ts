@@ -1,13 +1,9 @@
-import {
-  BaseCRUDService,
-  PasswordHash,
-  type ClsContextService,
-} from '@app/common';
+import { BaseCRUDService, PasswordHash, ClsContextService } from '@app/common';
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { UserEntity } from '../entities/user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import type { Repository } from 'typeorm';
-import type { GatewayService } from '@app/core/gateway';
+import { GatewayService } from '@app/core/gateway';
 import { AUDIT_ACTION, AUDIT_OPERATION } from '@app/common/constants';
 
 @Injectable()

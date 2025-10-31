@@ -9,7 +9,7 @@ import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
       port: getConfig('core.database.port'),
       username: getConfig('core.database.username'),
       password: getConfig<string>('core.database.password'),
-      database: getConfig('core.database.dbName'),
+      database: getConfig('core.database.database'),
       synchronize: getConfig('core.database.synchronize'),
       autoLoadEntities: true,
       extra: {
@@ -48,7 +48,7 @@ export class DatabaseModule {
       port: getConfig('core.database.port'),
       username: getConfig('core.database.username'),
       password: '***MASKED***', // Don't log the actual password
-      database: getConfig('core.database.dbName'),
+      database: getConfig('core.database.database'),
       synchronize: getConfig('core.database.synchronize'),
       logging: getConfig('core.database.logging', false),
       extra: {

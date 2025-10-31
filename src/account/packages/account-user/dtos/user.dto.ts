@@ -1,7 +1,7 @@
 import { BaseEntityDto } from '@app/common';
 import { UserRole, UserStatus } from '@app/common/enums';
 import { ApiProperty, PickType } from '@nestjs/swagger';
-import { Expose } from 'class-transformer/types';
+import { Expose } from 'class-transformer';
 import {
   IsEmail,
   IsEnum,
@@ -9,7 +9,7 @@ import {
   IsString,
   IsUUID,
   Length,
-} from 'class-validator/types';
+} from 'class-validator';
 
 export class UserDto extends BaseEntityDto {
   @ApiProperty({ example: 'uuid-value', description: 'Unique user identifier' })

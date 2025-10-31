@@ -1,6 +1,6 @@
 import { CommandHandler, type ICommandHandler } from '@nestjs/cqrs';
 import { CreateUserCommand } from '../impl';
-import type { AccountUserService } from '../../services/account-user.service';
+import { AccountUserService } from '../../services/account-user.service';
 import { UserEntity } from '../../entities/user.entity';
 
 @CommandHandler(CreateUserCommand)

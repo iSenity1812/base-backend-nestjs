@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Expose } from 'class-transformer/types';
-import { IsString, MinLength } from 'class-validator/types';
+import { Expose } from 'class-transformer';
+import { IsString, MinLength } from 'class-validator';
 
 export class ChangePasswordDto {
   @Expose()

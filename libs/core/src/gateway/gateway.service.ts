@@ -3,15 +3,16 @@ import {
   operationsMap,
 } from '@app/common/constants/global.constants';
 import { Injectable, Logger, type Type } from '@nestjs/common';
-import type { CommandBus, ICommand } from '@nestjs/cqrs';
+import { CommandBus } from '@nestjs/cqrs';
+import type { ICommand } from '@nestjs/cqrs';
 import {
   ClientProxyFactory,
   type MicroserviceOptions,
 } from '@nestjs/microservices';
 import type { RunOperationDto } from './dtos/run-operation.dto';
-import { firstValueFrom } from 'rxjs/dist/types';
+import { firstValueFrom } from 'rxjs';
 import type { RunCommandDto } from './dtos/run-command.dto';
-import { plainToInstance } from 'class-transformer/types';
+import { plainToInstance } from 'class-transformer';
 import { GatewayException } from '@app/common/exceptions';
 
 @Injectable()

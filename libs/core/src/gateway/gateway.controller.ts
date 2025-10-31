@@ -1,7 +1,7 @@
 import { Controller } from '@nestjs/common';
-import type { GatewayService } from './gateway.service';
+import { GatewayService } from './gateway.service';
 import { MessagePattern, Payload } from '@nestjs/microservices';
-import type { RunOperationDto } from './dtos/run-operation.dto';
+import { RunOperationDto } from './dtos/run-operation.dto';
 
 @Controller()
 export class GatewayController {

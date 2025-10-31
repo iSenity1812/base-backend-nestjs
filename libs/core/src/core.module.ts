@@ -20,7 +20,7 @@ const gatewayConfig = getConfig<GatewayConfig>('core.gateway');
         }),
       ),
     }),
-    CacheModule,
+    CacheModule.register(),
     AxiosModule.forRoot(),
     HealthModule,
   ],

@@ -1,6 +1,7 @@
 import { Injectable, ExecutionContext, Logger } from '@nestjs/common';
 import { CacheInterceptor } from '@nestjs/cache-manager';
-import type { Observable } from 'rxjs/dist/types';
+// Note: Observable types are available directly from 'rxjs' if needed
+// import type { Observable } from 'rxjs';
 
 @Injectable()
 export class LoggingCacheInterceptor extends CacheInterceptor {

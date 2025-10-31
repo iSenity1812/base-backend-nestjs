@@ -1,0 +1,44 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${CORE_DATABASE_USERNAME:-postgres}
+      POSTGRES_PASSWORD: ${CORE_DATABASE_PASSWORD:-postgres}
+      POSTGRES_DB: ${CORE_DATABASE_NAME:-postgres}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+
+  app:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: skeleton-backend-nestjs:dev
+    command: ['pnpm', 'dev']
+    working_dir: /usr/src/app
+    volumes:
+      - ../:/usr/src/app
+      - app-node-modules:/usr/src/app/node_modules
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      APP_NAME: SkeletonBackend
+      CORE_DATABASE_TYPE: ${CORE_DATABASE_TYPE:-postgres}
+      CORE_DATABASE_HOST: ${CORE_DATABASE_HOST:-db}
+      CORE_DATABASE_PORT: ${CORE_DATABASE_PORT:-5432}
+      CORE_DATABASE_USERNAME: ${CORE_DATABASE_USERNAME:-postgres}
+      CORE_DATABASE_PASSWORD: ${CORE_DATABASE_PASSWORD:-postgres}
+      CORE_DATABASE_NAME: ${CORE_DATABASE_NAME:-postgres}
+      CORE_DATABASE_SYNCHRONIZE: ${CORE_DATABASE_SYNCHRONIZE:-true}
+      CORE_DATABASE_LOGGING: ${CORE_DATABASE_LOGGING:-false}
+      # Optional: polling for file changes inside Docker on some hosts
+      CHOKIDAR_USEPOLLING: '1'
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
+  app-node-modules:

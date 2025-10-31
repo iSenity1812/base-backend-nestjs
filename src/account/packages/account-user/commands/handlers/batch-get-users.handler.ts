@@ -1,8 +1,8 @@
 import { CommandHandler, type ICommandHandler } from '@nestjs/cqrs';
 import { BatchGetUsersCommand } from '../impl';
 import { Injectable } from '@nestjs/common';
-import type { AccountUserService } from '../../services/account-user.service';
-import { plainToInstance } from 'class-transformer/types';
+import { AccountUserService } from '../../services/account-user.service';
+import { plainToInstance } from 'class-transformer';
 import { PublicUserDto } from '../../dtos/user.dto';
 
 @CommandHandler(BatchGetUsersCommand)

@@ -1,7 +1,7 @@
 import { CommandHandler, type ICommandHandler } from '@nestjs/cqrs';
 import { VerifyAccessTokenCommand } from '../impl';
-import type { AccountTokenService } from '../../services/account-token.service';
-import type { TokenPayload } from '@app/common/interfaces';
+import { AccountTokenService } from '../../services/account-token.service';
+import { TokenPayload } from '@app/common/interfaces';
 
 @CommandHandler(VerifyAccessTokenCommand)
 export class VerifyAccessTokenHandler

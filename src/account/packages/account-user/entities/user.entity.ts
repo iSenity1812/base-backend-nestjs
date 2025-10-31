@@ -1,6 +1,5 @@
 import { BaseEntity } from '@app/common';
 import { UserRole, UserStatus } from '@app/common/enums';
-import { generate } from 'rxjs/dist/types';
 import { Column, Entity } from 'typeorm';
 
 @Entity({

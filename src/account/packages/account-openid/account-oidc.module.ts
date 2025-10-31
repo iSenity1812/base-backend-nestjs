@@ -1,6 +1,5 @@
 import { Global, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Type } from 'class-transformer/types';
 import { OpenIdProviderEntity } from './entities/openid-provider.entity';
 import { GatewayModule } from '@app/core/gateway';
 import { OpenIdProviderController } from './controllers/openid-provider.controller';

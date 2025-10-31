@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Expose } from 'class-transformer/types';
-import { IsNotEmpty, IsString } from 'class-validator/types';
+import { Expose } from 'class-transformer';
+import { IsNotEmpty, IsString } from 'class-validator';
 
 export class RefreshTokenDto {
   @ApiProperty({

@@ -1,6 +1,6 @@
 import { CommandHandler, type ICommandHandler } from '@nestjs/cqrs';
 import { CreateAuditLogCommand } from '../impl';
-import type { AuditLogService } from '../../services/audit-log.service';
+import { AuditLogService } from '../../services/audit-log.service';
 
 @CommandHandler(CreateAuditLogCommand)
 export class CreateAuditHandler
